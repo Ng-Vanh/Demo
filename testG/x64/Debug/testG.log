@@ -1,0 +1,15 @@
+﻿  main.cpp
+C:\Users\ユーザー\source\repos\testGnew\testG\CommonFunc.h(42,2): warning C4091: 'typedef ': ignored on left of 'Input' when no variable is declared
+C:\Users\ユーザー\source\repos\testGnew\testG\CommonFunc.h(55,2): warning C4091: 'typedef ': ignored on left of 'Map' when no variable is declared
+C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(82,28): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(85,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(86,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(103,28): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(237,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(238,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(305,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(306,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(354,50): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  testG.vcxproj -> C:\Users\ユーザー\source\repos\testGnew\x64\Debug\testG.exe
