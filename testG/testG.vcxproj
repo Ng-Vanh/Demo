@@ -135,6 +135,7 @@
     <ClCompile Include="CommonFunc.cpp" />
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="GameMap.cpp" />
+    <ClCompile Include="GamePower.cpp" />
     <ClCompile Include="ImpTimer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainObject.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="CommonFunc.h" />
     <ClInclude Include="Explosion.h" />
     <ClInclude Include="GameMap.h" />
+    <ClInclude Include="GamePower.h" />
     <ClInclude Include="ImpTimer.h" />
     <ClInclude Include="MainObject.h" />
     <ClInclude Include="Text.h" />
