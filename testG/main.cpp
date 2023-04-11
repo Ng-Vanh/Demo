@@ -7,6 +7,7 @@
 #include "ThreatObject.h"
 #include "Explosion.h"
 #include "Text.h"
+#include "BossObj.h"
 
 #include"GamePower.h"
 
@@ -103,7 +104,7 @@ std::vector<ThreatObject*> MakeThreatList()
 		{
 			p_threat->LoadImg("img//threat_level.png", g_screen);
 			p_threat->set_clips();
-			p_threat->set_x_pos(rand() %1236 + (i+1) * 1356);
+			p_threat->set_x_pos(rand() %1336 + (i+1) * 856);
 			p_threat->set_y_pos(250);
 			p_threat->set_type_move_(ThreatObject::STATIC_THREAT);
 			p_threat->set_input_left(0);
@@ -144,7 +145,17 @@ int main(int argc, char* argv[])
 	player_money.Init(g_screen);
 	player_money.setPos(SCREEN_WIDTH/2 - 100, 12);
 
+
+	//Threat:
 	std::vector<ThreatObject*> threats_list = MakeThreatList();
+	//Boss:
+	BossObject BossObj;
+	BossObj.LoadImg("img//boss_object.png", g_screen);
+	BossObj.set_clips();
+	int PosBoss = MAX_MAP_X * TILE_SIZE - SCREEN_WIDTH;
+	BossObj.set_x_pos(PosBoss);
+	BossObj.set_y_pos(20);
+	int boss_blood = 100;
 
 	ExplosionObj exp_threat;
 	bool tRet = exp_threat.LoadImg("img//exp3.png", g_screen);
@@ -165,6 +176,17 @@ int main(int argc, char* argv[])
 	{
 		exp_player.set_clip();
 	}
+	ExplosionObj exp_boss;
+	bool tRetBoss = exp_boss.LoadImg("Img//boss_bullet.png", g_screen);
+	if (!tRetBoss)
+	{
+		return false;
+	}
+	else
+	{
+		exp_boss.set_clip();
+	}
+
 	int heart = 3;
 	//Text:
 	TextObj time_game;
@@ -175,6 +197,7 @@ int main(int argc, char* argv[])
 	Coin_txt.SetColor(TextObj::RED_TXT);
 
 	bool is_quit = false;
+	bool boss = true;
 	while (!is_quit)
 	{
 		fps_timer.start();
@@ -381,6 +404,127 @@ int main(int argc, char* argv[])
 		Coin_txt.SetText(show_coin);
 		Coin_txt.LoadFromRenderText(font_common, g_screen);
 		Coin_txt.RenderText(g_screen, SCREEN_WIDTH * 0.5 - 50, 15);
+
+
+		//Show Boss
+		BossObj.SetMapXY(map_data.start_x_, map_data.start_y_);
+		BossObj.DoPlayer(map_data, boss_blood);
+		BossObj.MakeBullet(g_screen, SCREEN_WIDTH, SCREEN_HEIGHT);
+		BossObj.Show(g_screen, boss_blood);
+
+		//Check Boss_Player
+		SDL_Rect rect_player = p_player.GetRectFrame();
+		bool bCol1 = false;
+		std::vector<BulletObject*> boss_bullets = BossObj.get_bullet_list();
+		for (int id = 0; id < boss_bullets.size(); id++)
+		{
+			BulletObject* boss_bullet = boss_bullets[id];
+			if (boss_bullet)
+			{
+				SDL_Rect boss_bullet_rect = boss_bullet->GetRect();
+				bCol1 = SDLCommonFunc::CheckCollision(rect_player, boss_bullet_rect);
+				if (bCol1)
+				{
+					BossObj.RemoveBullet(id);
+					break;
+				}
+			}
+		}
+		//Dan cua Boss trung player
+		SDL_Rect rect_boss = BossObj.GetRectFrame();
+		bool bCol2 = SDLCommonFunc::CheckCollision(rect_boss, rect_player);
+		if (bCol1 || bCol2)
+		{
+			int width_exp_frame = exp_player.get_frame_width();
+			int height_exp_frame = exp_player.get_frame_height();
+			for (int ex = 0; ex < 8; ex++)
+			{
+				int x_pos = (p_player.GetRect().x + p_player.get_frame_width() * 0.5) - width_exp_frame * 0.5;
+				int y_pos = (p_player.GetRect().y + p_player.get_frame_height() * 0.5) - height_exp_frame * 0.5;
+
+				exp_player.set_frame(ex);
+				exp_player.SetRect(x_pos, y_pos);
+				exp_player.Show(g_screen);
+				SDL_RenderPresent(g_screen);
+			}
+			heart--;
+
+			if (heart >= 1)
+			{
+				p_player.SetRect(0, 0);
+				p_player.set_comeback_time(100);
+				SDL_Delay(500);
+				player_heart.Decrease();
+				player_heart.Render(g_screen);
+				continue;
+			}
+			else
+			{
+				//Game Won
+			}
+		}
+		//Dan player trung boss
+		int frame_exp_width_boss = exp_boss.get_frame_width();
+		int frame_exp_height_boss = exp_boss.get_frame_height();
+
+		//std::vector<BulletObject*> bullet_arr = p_player.get_bullet_list();
+		for (int r = 0; r < bullet_arr.size(); r++)
+		{
+			BulletObject* p_bullet = bullet_arr[r];
+			if (p_bullet != NULL)
+			{
+				SDL_Rect tRect;
+				tRect.x = BossObj.GetRect().x;
+				tRect.y = BossObj.GetRect().y;
+				tRect.w = BossObj.get_width_frame();
+				tRect.h = BossObj.get_height_frame();
+
+				SDL_Rect bRect = p_bullet->GetRect();
+
+				bool bCol = SDLCommonFunc::CheckCollision(bRect, tRect);
+
+				if (bCol == true)
+				{
+
+
+					for (int ex = 0; ex < NUM_FRAME_EXP; ex++)
+					{
+						int x_pos = p_bullet->GetRect().x - frame_exp_width_boss * 0.5;
+						int y_pos = p_bullet->GetRect().y - frame_exp_height_boss * 0.5;
+
+						exp_boss.set_frame(ex);
+						exp_boss.SetRect(x_pos, y_pos);
+						exp_boss.Show(g_screen);
+						SDL_RenderPresent(g_screen);
+					}
+
+					boss_blood -= 2;
+					exp_boss.Free();
+					p_player.RemoveBullet(r);
+					if (boss_blood == 0)
+					{
+						//mark_val += 10;
+						BossObj.Free();
+						boss = false;
+						std::vector<BulletObject*> tBullet_list = BossObj.get_bullet_list();
+						for (int jj = 0; jj < tBullet_list.size(); jj++)
+							BossObj.RemoveBullet(jj);
+
+						is_quit = true;
+					}
+				
+				}
+
+			}
+		}
+
+
+		int val = MAX_MAP_X * TILE_SIZE - (map_data.start_x_ + p_player.GetRect().x) - 750;
+		if (val <= SCREEN_WIDTH && boss == true)
+		{
+			BossObj.ShowHP(g_screen, boss_blood);
+		}
+
 
 		SDL_RenderPresent(g_screen);
 

@@ -3,14 +3,19 @@ C:\Users\ユーザー\source\repos\testGnew\testG\CommonFunc.h(42,2): warning C4
 C:\Users\ユーザー\source\repos\testGnew\testG\CommonFunc.h(55,2): warning C4091: 'typedef ': ignored on left of 'Map' when no variable is declared
 C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(84,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(85,36): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(88,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(85,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(86,36): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
 C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(89,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(106,37): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(254,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(255,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(324,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(325,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(383,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(90,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(107,37): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(156,20): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(277,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(278,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(347,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(348,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(406,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(442,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(443,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(492,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(493,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   testG.vcxproj -> C:\Users\ユーザー\source\repos\testGnew\x64\Debug\testG.exe

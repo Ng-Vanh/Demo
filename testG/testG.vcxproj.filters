@@ -48,6 +48,9 @@
     <ClCompile Include="GamePower.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BossObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseObject.h">
@@ -78,6 +81,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="GamePower.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BossObj.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
