@@ -104,13 +104,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\ユーザー\SDL2_Run\SD2_mixer\SDL_mixer-1.2.7\include;C:\Users\ユーザー\SDL2_Run\SDL2_ttf\SDL2_ttf-2.20.1\include;C:\Users\ユーザー\SDL2_Run\SDL2_image\SDL2_image-2.6.2\include;C:\Users\ユーザー\SDL2_Run\SDL2\SDL2-2.26.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\ユーザー\SDL2_Run\SDL2_mixer-devel-2.6.2-VC\SDL2_mixer-2.6.2\include;C:\Users\ユーザー\SDL2_Run\SDL2_ttf\SDL2_ttf-2.20.1\include;C:\Users\ユーザー\SDL2_Run\SDL2_image\SDL2_image-2.6.2\include;C:\Users\ユーザー\SDL2_Run\SDL2\SDL2-2.26.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\ユーザー\SDL2_Run\SDL2_ttf\SDL2_ttf-2.20.1\lib\x64;C:\Users\ユーザー\SDL2_Run\SDL2_image\SDL2_image-2.6.2\lib\x64;C:\Users\ユーザー\SDL2_Run\SDL2\SDL2-2.26.2\lib\x64;C:\Users\ユーザー\SDL2_Run\SD2_mixer\SDL_mixer-1.2.7\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2main.lib;SDL2.lib;SDL2test.lib;SDL2_image.lib;SDL2_ttf.lib;SDL_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\ユーザー\SDL2_Run\SDL2_ttf\SDL2_ttf-2.20.1\lib\x64;C:\Users\ユーザー\SDL2_Run\SDL2_image\SDL2_image-2.6.2\lib\x64;C:\Users\ユーザー\SDL2_Run\SDL2\SDL2-2.26.2\lib\x64;C:\Users\ユーザー\SDL2_Run\SDL2_mixer-devel-2.6.2-VC\SDL2_mixer-2.6.2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2main.lib;SDL2.lib;SDL2test.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -153,6 +153,7 @@
     <ClInclude Include="GamePower.h" />
     <ClInclude Include="ImpTimer.h" />
     <ClInclude Include="MainObject.h" />
+    <ClInclude Include="Sound.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="ThreatObject.h" />
   </ItemGroup>

@@ -8,8 +8,8 @@
 #include "Explosion.h"
 #include "Text.h"
 #include "BossObj.h"
-
 #include"GamePower.h"
+#include "Sound.h"
 
 BaseObject g_background;
 TTF_Font* font_common =NULL ;
@@ -23,6 +23,7 @@ void close()
 	g_Window = NULL;
 	IMG_Quit();
 	SDL_Quit();
+	Mix_CloseAudio();
 }
 
 bool InitData()
@@ -68,6 +69,18 @@ bool LoadBackGround()
 		return false;
 	return true;
 }
+bool LoadMedia()
+{
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+	{
+		return false;
+	}
+	if (checkSound == false)
+	{
+		return false;
+	}
+}
+
 std::vector<ThreatObject*> MakeThreatList()
 {
 	std::vector<ThreatObject*> list_threats;// static threat
@@ -128,6 +141,9 @@ int main(int argc, char* argv[])
 		return -1;
 	if (LoadBackGround() == false)
 		return -1;
+	if (LoadMedia() == false)
+		return -1;
+	
 
 	GameMap game_map;
 	char nameFileMap[] = "map/map01.dat";
@@ -258,6 +274,7 @@ int main(int argc, char* argv[])
 						bCol1 = SDLCommonFunc::CheckCollision(pt_bullet->GetRect(), rect_player);
 						if (bCol1)
 						{
+							MixHitThreat();
 							p_threat->RemoveBullet(j);
 							break;
 						}
@@ -352,7 +369,7 @@ int main(int argc, char* argv[])
 								exp_threat.Show(g_screen);
 								SDL_RenderPresent(g_screen);
 							}
-
+							MixHitThreat();
 							p_player.RemoveBullet(r);
 							obj_threat->Free();
 							threats_list.erase(threats_list.begin() + t);

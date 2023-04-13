@@ -1,5 +1,5 @@
 #include "MainObject.h"
-
+#include "Sound.h"
 MainObject::MainObject()
 {
 	frame_ = 0;
@@ -154,6 +154,7 @@ void MainObject::HandleInputAction(SDL_Event events, SDL_Renderer* screen)
 		}
 		else if (events.button.button == SDL_BUTTON_LEFT)
 		{
+			MixLaser();
 			BulletObject* p_bullet = new BulletObject();
 			p_bullet->set_bullet_type(BulletObject::SPHERE_BULLET);
 			p_bullet->LoadImgBullet(screen);
