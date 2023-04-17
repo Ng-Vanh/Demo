@@ -179,7 +179,7 @@ int showMenu()
 					{
 						if (!selected[i])
 						{
-							MixSelect();
+							MixSelect(); 
 							
 							selected[i] = 1;
 							surface[i] = TTF_RenderText_Solid(font_menu, text[i].c_str(), colorMenu[1]);
