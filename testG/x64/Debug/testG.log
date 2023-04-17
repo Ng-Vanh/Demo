@@ -29,21 +29,21 @@ C:\Users\ユーザー\source\repos\testGnew\testG\CommonFunc.h(42,2): warning C4
 C:\Users\ユーザー\source\repos\testGnew\testG\CommonFunc.h(55,2): warning C4091: 'typedef ': ignored on left of 'Map' when no variable is declared
 C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(98,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(99,36): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(102,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(103,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(120,37): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(172,20): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(294,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(295,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(364,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(365,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(423,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(459,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(460,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(509,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(510,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(246,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(247,36): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(250,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(251,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(268,37): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(325,20): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(453,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(454,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(523,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(524,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(582,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(618,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(619,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(668,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(669,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   Generating Code...
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(82): warning C4715: 'LoadMedia': not all control paths return a value
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(84): warning C4715: 'LoadMedia': not all control paths return a value
   testG.vcxproj -> C:\Users\ユーザー\source\repos\testGnew\x64\Debug\testG.exe

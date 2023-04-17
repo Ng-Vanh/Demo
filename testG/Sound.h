@@ -4,6 +4,7 @@
 static bool checkSound = true;
 static Mix_Chunk* laser = NULL;
 static Mix_Chunk* hit_threat;
+static Mix_Chunk* mix_select_click;
 static void MixLaser()
 {
 	laser = Mix_LoadWAV("sound//Laser.wav");
@@ -25,5 +26,17 @@ static void MixHitThreat()
 	}
 	else {
 		Mix_PlayChannel(-1, hit_threat, 0);
+	}
+}
+static void MixSelect()
+{
+	mix_select_click = Mix_LoadWAV("sound//select_click.wav");
+	if (mix_select_click == NULL)
+	{
+		checkSound = false;
+	}
+	else
+	{
+		Mix_PlayChannel(-1, mix_select_click, 0);
 	}
 }
