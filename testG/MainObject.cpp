@@ -21,7 +21,7 @@ MainObject::MainObject()
 	int come_back_time = 0;
 
 	money_count = 0;
-
+	point = 0;
 }
 
 MainObject::~MainObject()
@@ -213,12 +213,58 @@ void MainObject::RemoveBullet(const int& idx)
 	{
 		BulletObject* p_bullet = p_bullet_list.at(idx);
 		p_bullet_list.erase(p_bullet_list.begin() + idx);//xoa bo
-		if (p_bullet)
+		if (p_bullet )
 		{
 			delete p_bullet; 
 			p_bullet = NULL;
 		}
 	}
+}
+void MainObject::RemoveBulletWithTileSet(const int& id, Map& map_data)
+{
+	//int size = p_bullet_list.size();
+	//if (size > 0 && id < size)
+	//{
+	//	BulletObject* p_bullet = p_bullet_list.at(id);
+	//	int x = p_bullet->GetRect().x;
+	//	int y = p_bullet->GetRect().y;
+	//	int x1 = 0;
+	//	int x2 = 0;
+
+	//	int y1 = 0;
+	//	int y2 = 0;
+
+	//	// check theo chieu ngang
+	//	int height_min = 12 < TILE_SIZE ? 12 : TILE_SIZE;
+	//	x1 = (x + x_val_) / TILE_SIZE;
+	//	x2 = (x + x_val_ + 12 - 1) / TILE_SIZE;
+
+	//	y1 = (y) / TILE_SIZE;
+	//	y2 = (y + height_min - 1) / TILE_SIZE;
+
+
+	//	
+	//	if (x1>= 0 && y1 >= 0)
+	//	{
+	//		int val1 = map_data.tile[y1][x2];
+	//		int val2 = map_data.tile[y2][x2];
+	//		std::cout << val1 <<" "<<val2 << "\n";
+	//		if (val1 != 0 && val2!=0)
+	//		{
+	//			p_bullet_list.erase(p_bullet_list.begin() + id);//xoa bo
+
+	//			std::cout << "Remove: " << val1 << std::endl;
+	//		}
+
+	//	}
+
+	//	if (p_bullet)
+	//	{
+	//		delete p_bullet;
+	//		p_bullet = NULL;
+
+	//	}
+	//}
 }
 
 void MainObject::DoPlayer(Map& map_data)
@@ -314,7 +360,7 @@ void MainObject::CheckToMap(Map& map_data)
 
 	y1 = (y_pos_) / TILE_SIZE;
 	y2 = (y_pos_ + height_min - 1) / TILE_SIZE;
-
+	
 	/*
 	
 	(x1,y1)---------(x2,y1) = val1
@@ -333,12 +379,13 @@ void MainObject::CheckToMap(Map& map_data)
 		{
 			int val1 = map_data.tile[y1][x2];
 			int val2 = map_data.tile[y2][x2];
-
+			
 			if (val1 == STATE_MONEY || val2 == STATE_MONEY)
 			{
 				map_data.tile[y1][x2] = BLANK_TILE;
 				map_data.tile[y2][x2] = BLANK_TILE;
 				InCreaseMoney();
+				Increase5Point();
 			}
 			else
 			{
@@ -361,6 +408,8 @@ void MainObject::CheckToMap(Map& map_data)
 				map_data.tile[y1][x1] = BLANK_TILE;
 				map_data.tile[y2][x1] = BLANK_TILE;
 				InCreaseMoney();
+				Increase5Point();
+
 			}
 			else
 			{
@@ -395,6 +444,8 @@ void MainObject::CheckToMap(Map& map_data)
 				map_data.tile[y2][x1] = BLANK_TILE;
 				map_data.tile[y2][x2] = BLANK_TILE;
 				InCreaseMoney();
+				Increase5Point();
+
 			}
 			else
 			{
@@ -422,6 +473,8 @@ void MainObject::CheckToMap(Map& map_data)
 				map_data.tile[y1][x1] = BLANK_TILE;
 				map_data.tile[y1][x2] = BLANK_TILE;
 				InCreaseMoney();
+				Increase5Point();
+
 			}
 			else
 			{ 
@@ -479,5 +532,9 @@ void MainObject::UpDateImagePlayer(SDL_Renderer* des)
 void MainObject::InCreaseMoney()
 {
 	money_count++;
+}
 	
+void MainObject::DeCreaseHP()
+{
+	HP--;
 }

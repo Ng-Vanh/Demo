@@ -2,6 +2,7 @@
 #include "SDL_mixer.h"
 
 static bool checkSound = true;
+static Mix_Music* bkMusic;
 static Mix_Chunk* laser = NULL;
 static Mix_Chunk* hit_threat;
 static Mix_Chunk* mix_select_click;
@@ -38,5 +39,18 @@ static void MixSelect()
 	else
 	{
 		Mix_PlayChannel(-1, mix_select_click, 0);
+	}
+}
+
+static void BKMusic()
+{
+	bkMusic = Mix_LoadMUS("sound//bkMus.mp3");
+	if (bkMusic == NULL)
+	{
+		checkSound = false;
+	}
+	else
+	{
+		Mix_PlayMusic( bkMusic,-1);
 	}
 }

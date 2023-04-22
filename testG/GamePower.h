@@ -37,3 +37,21 @@ private:
 	int x_pos;
 	int y_pos;
 };
+
+class Point : public BaseObject
+{
+public:
+	Point();
+	~Point();
+	void Init(SDL_Renderer* screen);
+	void Show(SDL_Renderer* screen);
+	void setPos(const int& xP, const int& yP)
+	{
+		x_pos = xP;
+		y_pos = yP;
+	}
+
+private:
+	int x_pos;
+	int y_pos;
+};

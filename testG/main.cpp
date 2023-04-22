@@ -297,6 +297,7 @@ int main(int argc, char* argv[])
 	if (LoadMedia() == false)
 		return -1;
 	
+	BKMusic();
 
 	GameMap game_map;
 	char nameFileMap[] = "map/map01.dat";
@@ -306,6 +307,9 @@ int main(int argc, char* argv[])
 	MainObject p_player;
 	p_player.LoadImg("img//player_right.png", g_screen);
 	p_player.set_clip();
+	int heart = 3;
+	p_player.SetHP(heart);
+	p_player.setPoint(0);
 
 	GamePower player_heart;
 	player_heart.Init(g_screen);
@@ -313,6 +317,10 @@ int main(int argc, char* argv[])
 	Coin player_money;
 	player_money.Init(g_screen);
 	player_money.setPos(SCREEN_WIDTH/2 - 100, 12);
+
+	Point player_point;
+	player_point.Init(g_screen);
+	player_point.setPos(SCREEN_WIDTH / 2 - 100, 50);
 
 
 	//Threat:
@@ -356,14 +364,16 @@ int main(int argc, char* argv[])
 		exp_boss.set_clip();
 	}
 
-	int heart = 3;
+	
 	//Text:
 	TextObj time_game;
 	TextObj HP_txt;
 	TextObj Coin_txt;
+	TextObj Point_txt;
 	time_game.SetColor(TextObj::RED_TXT);
 	HP_txt.SetColor(TextObj::RED_TXT);
 	Coin_txt.SetColor(TextObj::RED_TXT);
+	Point_txt.SetColor(TextObj::RED_TXT);
 	bool boss = true;
 
 	int tmp = showMenu();
@@ -396,16 +406,36 @@ int main(int argc, char* argv[])
 		p_player.SetMapXY(map_data.start_x_, map_data.start_y_);
 		p_player.DoPlayer(map_data);
 		p_player.Show(g_screen);
-
 		//Map
 		game_map.setMap(map_data);
 		game_map.DrawMap(g_screen);
 
-	
 		//show Mang:
 
 		player_heart.Show(g_screen);
 
+		
+		if (p_player.GetRect().y > 620 )
+		{
+			p_player.DeCreaseHP();
+			p_player.SetRect(0, 0);
+			p_player.set_comeback_time(100);
+			SDL_Delay(500);
+			player_heart.Decrease();
+			player_heart.Render(g_screen);
+			//continue;
+		}
+		if (p_player.GetHP() == 0)
+		{
+			if (MessageBox(NULL, L"GameOver!!", L"Alert", MB_OK | MB_ICONSTOP) == IDOK)
+			{
+				close();
+				SDL_Quit();
+				return 0;
+			}
+		}
+		
+		
 		//Show coin
 		player_money.Show(g_screen);
 
@@ -459,13 +489,13 @@ int main(int argc, char* argv[])
 						SDL_RenderPresent(g_screen);
 					}
 
-					heart--;
-					
-					
-					if (heart >= 1)
-					{
-						
+					p_player.DeCreaseHP();
 
+					
+				
+					
+					if (p_player.GetHP() >= 1)
+					{
 						p_player.SetRect(0, 0);
 						p_player.set_comeback_time(100);
 						SDL_Delay(500);
@@ -501,6 +531,7 @@ int main(int argc, char* argv[])
 			BulletObject* p_bullet = bullet_arr.at(r);
 			if (p_bullet != NULL)
 			{
+
 				for (int t = 0; t < threats_list.size(); t++)
 				{
 					ThreatObject* obj_threat = threats_list.at(t);
@@ -515,6 +546,7 @@ int main(int argc, char* argv[])
 
 						SDL_Rect bRect = p_bullet->GetRect();
 						bool bCol = SDLCommonFunc::CheckCollision(bRect, tRect);
+						//std::cout << bRect.x << " " << bRect.y << std::endl;
 
 						if (bCol)
 						{
@@ -530,6 +562,7 @@ int main(int argc, char* argv[])
 							}
 							MixHitThreat();
 							p_player.RemoveBullet(r);
+							p_player.Increase10Point();
 							obj_threat->Free();
 							threats_list.erase(threats_list.begin() + t);
 						}
@@ -581,6 +614,15 @@ int main(int argc, char* argv[])
 		Coin_txt.LoadFromRenderText(font_common, g_screen);
 		Coin_txt.RenderText(g_screen, SCREEN_WIDTH * 0.5 - 50, 15);
 
+		//Show Point
+		int cur_point = p_player.getPoint();
+		std::string show_point = "SCORE: ";
+		std::string point = std::to_string(cur_point);
+		show_point += point;
+
+		Point_txt.SetText(show_point);
+		Point_txt.LoadFromRenderText(font_common, g_screen);
+		Point_txt.RenderText(g_screen, SCREEN_WIDTH / 2 - 100, 50);
 
 		//Show Boss
 		BossObj.SetMapXY(map_data.start_x_, map_data.start_y_);
@@ -623,9 +665,9 @@ int main(int argc, char* argv[])
 				exp_player.Show(g_screen);
 				SDL_RenderPresent(g_screen);
 			}
-			heart--;
+			p_player.DeCreaseHP();
 
-			if (heart >= 1)
+			if (p_player.GetHP() >= 1)
 			{
 				p_player.SetRect(0, 0);
 				p_player.set_comeback_time(100);
@@ -655,9 +697,12 @@ int main(int argc, char* argv[])
 				tRect.w = BossObj.get_width_frame();
 				tRect.h = BossObj.get_height_frame();
 
-				SDL_Rect bRect = p_bullet->GetRect();
+				SDL_Rect bRect = p_bullet->GetRect();//bRect: toan do dan cua player
 
 				bool bCol = SDLCommonFunc::CheckCollision(bRect, tRect);
+
+				
+				
 
 				if (bCol == true)
 				{
@@ -680,6 +725,7 @@ int main(int argc, char* argv[])
 					if (boss_blood == 0)
 					{
 						//mark_val += 10;
+						p_player.Increase100Point();
 						BossObj.Free();
 						boss = false;
 						std::vector<BulletObject*> tBullet_list = BossObj.get_bullet_list();
@@ -693,7 +739,7 @@ int main(int argc, char* argv[])
 
 			}
 		}
-
+		std::cout << p_player.getPoint()<<"\n";
 
 		int val = MAX_MAP_X * TILE_SIZE - (map_data.start_x_ + p_player.GetRect().x) - 750;
 		if (val <= SCREEN_WIDTH && boss == true)

@@ -53,9 +53,19 @@ public:
 
 	std::vector<BulletObject*> get_bullet_list() const { return p_bullet_list; }
 	void RemoveBullet(const int& idx);
+	void RemoveBulletWithTileSet(const int& id, Map& map_data);
 	void InCreaseMoney();
+	void DeCreaseHP();
+	void SetHP(const int& hp) { HP = hp; }
 	int GetHP() const { return HP; }
 	int GetCoin() const { return money_count; }
+
+	void setPoint(const int& c) { point = c; }
+	int getPoint() const { return point; }
+	void Increase5Point() { point += 5; }
+	void Increase10Point() { point += 10; }
+	void Increase30Point() { point += 30; }
+	void Increase100Point() { point += 100; }
 
 private:
 	int money_count ;
@@ -81,4 +91,6 @@ private:
 
 	int HP;
 	int come_back_time = 0;
+
+	int point;
 };

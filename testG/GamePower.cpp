@@ -68,3 +68,23 @@ void Coin::Show(SDL_Renderer* screen)
 	rect_.y = y_pos;
 	Render(screen);
 }
+
+Point::Point()
+{
+	x_pos = 0;
+	y_pos = 0;
+}
+Point:: ~Point()
+{
+
+}
+void Point::Init(SDL_Renderer* screen)
+{
+	bool ret = LoadImg("img//coin.png", screen);
+}
+void Point::Show(SDL_Renderer* screen)
+{
+	rect_.x = x_pos;
+	rect_.y = y_pos;
+	Render(screen);
+}

@@ -1,30 +1,4 @@
-﻿  MainObject.cpp
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\ユーザー\source\repos\testGnew\testG\CommonFunc.h(42,2): warning C4091: 'typedef ': ignored on left of 'Input' when no variable is declared
-C:\Users\ユーザー\source\repos\testGnew\testG\CommonFunc.h(55,2): warning C4091: 'typedef ': ignored on left of 'Map' when no variable is declared
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(87,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(88,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(165,46): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(171,66): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(211,33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(229,26): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(281,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(290,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(312,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(313,44): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(315,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(316,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(347,18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(369,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(380,14): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(381,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(383,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(384,45): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(403,18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(430,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.cpp(446,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  main.cpp
+﻿  main.cpp
 C:\Users\ユーザー\source\repos\testGnew\testG\CommonFunc.h(42,2): warning C4091: 'typedef ': ignored on left of 'Input' when no variable is declared
 C:\Users\ユーザー\source\repos\testGnew\testG\CommonFunc.h(55,2): warning C4091: 'typedef ': ignored on left of 'Map' when no variable is declared
 C:\Users\ユーザー\source\repos\testGnew\testG\MainObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
@@ -34,16 +8,15 @@ C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(247,36): warning C424
 C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(250,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(251,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(268,37): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(325,20): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(453,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(454,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(523,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(524,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(582,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(618,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(619,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(668,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(669,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(333,20): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(483,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(484,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(555,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(556,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(615,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(660,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(661,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(713,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(714,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 C:\Users\ユーザー\source\repos\testGnew\testG\main.cpp(84): warning C4715: 'LoadMedia': not all control paths return a value
   testG.vcxproj -> C:\Users\ユーザー\source\repos\testGnew\x64\Debug\testG.exe
